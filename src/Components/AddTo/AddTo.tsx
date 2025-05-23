@@ -7,7 +7,7 @@ const AddTo = () => {
     return (
         <div className="addTo">
             <button className="addToBasket"><p className="addToBasketText">Buy Now! | {Price}</p></button>
-            <button className="addToFavorites"><img src={favButton} className="favButton"/></button>
+            <button className="addToFavorites"><img src={favButton} alt="F" className="favButton"/></button>
         </div>
     );
 };

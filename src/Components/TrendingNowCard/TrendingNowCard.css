@@ -1,0 +1,50 @@
+.trendingNowCard {
+    display: flex;
+    flex-direction: column;
+    height: 320px;
+    width: 220px;
+}
+
+.trendingNowCard .gamePrice{
+    align-items: flex-end;
+}
+
+.gameDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 5px
+}
+
+.gameCoverArt {
+    width: 220px;
+    height: 220px;
+}
+
+.gameTitle {
+    color: white;
+}
+
+.cardGameDescription {
+   color: white;
+}
+
+.gamePrice {
+
+}
+
+.gamePriceButton {
+    background-color: gray;
+    border-color: transparent;
+    color: white;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.gamePriceButton:hover {
+    background-color: #3399ff;
+}
+
+.cardGameDescription {
+    font-size: 12px;
+}

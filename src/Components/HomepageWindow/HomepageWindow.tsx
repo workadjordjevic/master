@@ -9,7 +9,7 @@ import ShadowBackground from "../ShadowBackground/ShadowBackground";
 const HomepageWindow = () => {
     return (
         <div className="homepageWindow">
-                <img className="homepageImage" src={image}/>
+                <img className="homepageImage" alt="Homepage image" src={image}/>
                 <DisplayCategory/>
                 <AddTo/>
                 <GameDescription/>

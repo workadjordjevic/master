@@ -1,0 +1,30 @@
+.trendingNowWindow{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.trendingNowHeader{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px 0;
+    flex-direction: row;
+}
+
+.trendingNowArrowButtons{
+    display: flex;
+    gap: 5px;
+}
+
+.trendingCardList{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    padding: 0 20px 0;
+}
+
+.trendingNowHeaderText{
+    color: white;
+    font-size: 18px;
+}
+
