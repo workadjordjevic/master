@@ -1,8 +1,9 @@
 .trendingNowCard {
     display: flex;
     flex-direction: column;
-    height: 320px;
+    justify-content: space-between;
     width: 220px;
+    gap: 12px;
 }
 
 .trendingNowCard .gamePrice{

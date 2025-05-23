@@ -44,7 +44,7 @@ const TrendingNowWindow : FC = () => {
             <div className="trendingCardList">
                 {mockDataArray.map((gameCard ) =>
                     <TrendingNowCard image={gameCard.image} title={gameCard.title}
-                                     description={gameCard.description} price={gameCard.price}/>
+                                     description={gameCard.description} price={gameCard.price} key={gameCard.title} />
                 )}
             </div>
         </div>
