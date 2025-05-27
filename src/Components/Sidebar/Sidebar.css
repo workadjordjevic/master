@@ -1,0 +1,32 @@
+.sidebar{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.emptySpace{
+    height: 50px;
+}
+
+.currentUser{
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.userInfo{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    justify-content:end;
+}
+
+.usernameText{
+    color:white;
+}
+
+.emailText{
+    color:white;
+    font-size: 14px;
+}

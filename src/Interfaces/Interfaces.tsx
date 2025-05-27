@@ -4,3 +4,8 @@ export interface IPropsTrendingNowCard {
     description: string;
     price: number;
 }
+
+export interface ISidebarTab {
+    icon: any;
+    tabName: string;
+}
