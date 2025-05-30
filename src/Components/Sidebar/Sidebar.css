@@ -6,10 +6,6 @@
     justify-content: space-between;
 }
 
-.emptySpace{
-    height: 50px;
-}
-
 .currentUser{
     display: flex;
     margin-bottom: 50px;
@@ -29,4 +25,8 @@
 .emailText{
     color:white;
     font-size: 14px;
+}
+
+.sidebar button:nth-child(1){
+    margin-bottom: 50px;
 }

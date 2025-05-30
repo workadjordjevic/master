@@ -1,0 +1,45 @@
+import React, {useMemo, useState} from 'react';
+import {mockDataArray} from "../Utils/mockDataAttay";
+import {IMockData, SearchCategory} from "../../Interfaces/Interfaces";
+import TrendingNowCard from "../TrendingNowCard/TrendingNowCard";
+import CustomButton from "../UI/CustomButton";
+import {arrayOfAutocompleteData} from "../Utils/arrayOfAutocompleteData";
+
+const CategoriesTab = () => {
+
+    const [searchCategory, setSearchCategory] = useState("");
+    const [searchRes, setSearchRes] = useState<IMockData[]>([]);
+    const suggestions = useMemo(() => autoComplete(searchCategory), [searchCategory]);
+
+    function autoComplete(input: string) {
+        return arrayOfAutocompleteData.filter(item => item.value.toLowerCase().includes(input.toLowerCase()));
+    }
+
+    function searchResult (request:string){
+        setSearchRes(mockDataArray.filter((game:IMockData) =>
+        !!game.category?.includes(request as SearchCategory))); // сделать поиск не чувстительный к регистру
+    }
+
+    return (
+        <div>
+            <div>
+                <input type="text" value={searchCategory} id="searchCategoryInput" onChange={(e) => setSearchCategory(e.target.value)}
+                       placeholder="Enter a category" />
+                <CustomButton onClick={() => searchResult(searchCategory)} label="Search"/>
+                <div>
+                    {suggestions.map((category) => <button>{category.value}</button> )}
+                </div>
+            </div>
+            <div className="searchResults">
+                {searchRes.length ?
+                    searchRes.map(game => <TrendingNowCard image={game.image} title={game.title}
+                                                           description={game.description} price={game.price} key={game.title} />)
+                    :
+                    <div>No matches</div>
+                }
+            </div>
+        </div>
+    );
+};
+
+export default CategoriesTab;

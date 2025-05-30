@@ -3,7 +3,9 @@ import './App.css';
 import Sidebar from "./Components/Sidebar/Sidebar";
 import HomepageWindow from "./Components/HomepageWindow/HomepageWindow";
 // import TrendingNowWindow from "./Components/TrendingNowWindow/TrendingNowWindow";
-import TrendingNowWindowS from "./Components/TrendingNowWindow/TrendingNowWindowS";
+import TrendingNowWindowS from "./Components/TrendingNowWindow/TrendingNowWindow";
+import CategoriesTab from "./Components/CategoriesTab/CategoriesTab";
+import CategoriesTabA from "./Components/CategoriesTab/CategoriesTabA";
 
 function App() {
   return (
@@ -15,6 +17,7 @@ function App() {
                 <TrendingNowWindowS/>
             </div>
         </div>
+        {/*<CategoriesTabA/>*/}
     </div>
   );
 }

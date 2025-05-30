@@ -9,15 +9,16 @@ import siteIcon from "../../Images/SiteIcon.png"
 import userIcon from "../../Images/User.png"
 
 const Sidebar = () => {
+    const siteTabs = [{tabName:"G:PLATFORM", icon:siteIcon},
+                                             {tabName:"Home", icon:homeIcon},
+                                             {tabName:"Category", icon:categoryIcon},
+                                             {tabName:"Buys", icon:buysIcon},
+                                             {tabName:"Wishlist", icon:wishlistIcon},];
     return (
         <div className="sidebar">
             <div>
-                <SidebarTab icon={siteIcon} tabName="G:PLATFORM"/>
-                <div className="emptySpace"></div>
-                <SidebarTab icon={homeIcon} tabName="Home"/>
-                <SidebarTab icon={categoryIcon} tabName="Category"/>
-                <SidebarTab icon={buysIcon} tabName="Buys"/>
-                <SidebarTab icon={wishlistIcon} tabName="Wishlist"/>
+                {siteTabs.map((tab) =>
+                    <SidebarTab tabName={tab.tabName} icon={tab.icon} key={tab.tabName}/>)}
             </div>
             <div className="currentUser">
                 <img src={userIcon} className="userIcon" alt="user icon" />
