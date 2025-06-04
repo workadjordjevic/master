@@ -1,26 +1,45 @@
 import React, {useState} from 'react';
 import './App.css';
-import Sidebar from "./Components/Sidebar/Sidebar";
-import HomepageWindow from "./Components/HomepageWindow/HomepageWindow";
-// import TrendingNowWindow from "./Components/TrendingNowWindow/TrendingNowWindow";
-import TrendingNowWindowS from "./Components/TrendingNowWindow/TrendingNowWindow";
-import CategoriesTab from "./Components/CategoriesTab/CategoriesTab";
-import CategoriesTabA from "./Components/CategoriesTab/CategoriesTabA";
+import {createBrowserRouter, RouterProvider} from 'react-router-dom';
+import {IPropsTrendingNowCard} from "./Interfaces/Interfaces";
+import HomepageTab from "./Components/SiteTabs/HomepageTab/HomepageTab";
+import CategoriesTabA from "./Components/SiteTabs/CategoriesTab/CategoriesTabA";
+import Wishlist from "./Components/SiteTabs/WishlistTab/Wishlist";
+import CartTab from "./Components/CartTab/CartTab";
+import ErrorTab from "./Components/SiteTabs/ErrorTab/ErrorTab";
 
 function App() {
 
     const [searchCategory, setSearchCategory] = useState("");
+    const [wishlist, setWishlist] = useState<IPropsTrendingNowCard[]>([]);
+    const [cart, setCart] = useState<IPropsTrendingNowCard[]>([]);
+
+    const router = createBrowserRouter([
+        {
+            path: "/",
+            element: <HomepageTab setSearchCategory={setSearchCategory} />,
+            errorElement: <ErrorTab />
+        },
+        {
+            path: "/categories",
+            element: <CategoriesTabA searchCategory={searchCategory} setSearchCategory={setSearchCategory}/>
+        },
+        {
+            path: "/cart",
+            element: <CartTab />
+        },
+        {
+            path: "/wishlist",
+            element: <Wishlist />,
+        }
+    ]);
 
   return (
     <div className="app">
         <div className="mainPage">
-            <Sidebar/>
-            <div className="mainWindow">
-                <HomepageWindow setSearchCategory={setSearchCategory}/>
-                <TrendingNowWindowS/>
-            </div>
+            <RouterProvider router={router} />
         </div>
-        <CategoriesTabA searchCategory={searchCategory} setSearchCategory={setSearchCategory}/>
+        {/*<CategoriesTabA searchCategory={searchCategory} setSearchCategory={setSearchCategory}/>*/}
     </div>
   );
 }
@@ -28,4 +47,10 @@ function App() {
 export default App;
 
 
-//https://dev.to/aneeqakhan/building-an-image-slider-with-smooth-scrolling-using-react-1jdb
+// <div className="mainPage">
+//     <SidebarTab/>
+//     <div className="mainWindow">
+//         <HomepageWindow setSearchCategory={setSearchCategory}/>
+//         <TrendingNowWindowS/>
+//     </div>
+// </div>

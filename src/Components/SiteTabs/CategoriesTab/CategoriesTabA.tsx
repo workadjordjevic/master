@@ -1,9 +1,9 @@
 import React, {useMemo, useState} from 'react';
-import {mockDataArray} from "../Utils/mockDataAttay";
-import {IMockData, ISearchCategory, SearchCategory} from "../../Interfaces/Interfaces";
-import TrendingNowCard from "../TrendingNowCard/TrendingNowCard";
-import CustomButton from "../UI/CustomButton";
-import {arrayOfAutocompleteData} from "../Utils/arrayOfAutocompleteData";
+import {mockDataArray} from "../../Utils/mockDataAttay";
+import {IMockData, ISearchCategory, SearchCategory} from "../../../Interfaces/Interfaces";
+import TrendingNowCard from "../../TrendingNowCard/TrendingNowCard";
+import CustomButton from "../../UI/CustomButton";
+import {arrayOfAutocompleteData} from "../../Utils/arrayOfAutocompleteData";
 
 const CategoriesTab = ({searchCategory, setSearchCategory}: ISearchCategory) => {
 

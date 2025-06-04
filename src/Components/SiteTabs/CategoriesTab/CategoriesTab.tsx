@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import {mockDataArray} from "../Utils/mockDataAttay";
-import {IMockData} from "../../Interfaces/Interfaces";
-import TrendingNowCard from "../TrendingNowCard/TrendingNowCard";
-import CustomButton from "../UI/CustomButton";
+import {mockDataArray} from "../../Utils/mockDataAttay";
+import {IMockData} from "../../../Interfaces/Interfaces";
+import TrendingNowCard from "../../TrendingNowCard/TrendingNowCard";
+import CustomButton from "../../UI/CustomButton";
 
 const CategoriesTab = () => {
 

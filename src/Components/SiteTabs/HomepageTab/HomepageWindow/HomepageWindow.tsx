@@ -1,9 +1,9 @@
 import React from 'react';
 import "./HomepageWindow.css";
-import image from "../../Images/homepage1.jpg";
-import DisplayCategory from "../DisplayCategory/DisplayCategory";
-import favButton from "../../Images/favButton.png";
-import {ISetSearchCategory} from "../../Interfaces/Interfaces";
+import image from "../../../../Images/homepage1.jpg";
+import DisplayCategory from "../../../DisplayCategory/DisplayCategory";
+import favButton from "../../../../Images/favButton.png";
+import {ISetSearchCategory} from "../../../../Interfaces/Interfaces";
 
 const HomepageWindow = ({setSearchCategory}:ISetSearchCategory) => {
     const Price = 24.00;

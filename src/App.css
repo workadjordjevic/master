@@ -3,11 +3,5 @@
     gap: 10px;
     width: 100%;
     justify-content: center;
-    background-color: black;
-}
-
-.mainPage{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
+    background-color: grey;
 }

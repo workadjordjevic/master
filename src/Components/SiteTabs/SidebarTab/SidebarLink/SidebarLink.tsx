@@ -1,8 +1,8 @@
 import React from 'react';
-import "./SidebarTab.css";
-import {ISidebarTab} from "../../Interfaces/Interfaces";
+import "./SidebarLink.css";
+import {ISidebarTab} from "../../../../Interfaces/Interfaces";
 
-const SidebarTab = ({tabName, icon, isDisabled}: ISidebarTab) => {
+const SidebarLink = ({tabName, icon, isDisabled}: ISidebarTab) => {
 
     function disabledButtonClass() {
         if(isDisabled)
@@ -19,4 +19,4 @@ const SidebarTab = ({tabName, icon, isDisabled}: ISidebarTab) => {
     );
 };
 
-export default SidebarTab;
+export default SidebarLink;
