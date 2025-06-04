@@ -22,11 +22,15 @@ export interface IPropsTrendingNowCard {
     title: string;
     description: string;
     price: number;
+    hasDiscount?: boolean;
+    discountAmount?:number;
+    discountedPrice?: number;
 }
 
 export interface ISidebarTab {
     icon: string;
     tabName: string;
+    isDisabled?: boolean;
 }
 
 export interface IMockData {
@@ -35,6 +39,8 @@ export interface IMockData {
     description: string;
     price: number;
     category?: SearchCategory[];
+    hasDiscount?: boolean;
+    discountAmount?:number;
 }
 
 export interface ICustomButton{
@@ -46,4 +52,18 @@ export interface ICustomButton{
 
 export interface AutoCompleteItem {
     value: string;
+}
+
+export interface IDisplayCategoryButton {
+    categories?: string[];
+    onClick?: any;
+}
+
+export interface ISetSearchCategory {
+    setSearchCategory: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export interface ISearchCategory {
+    searchCategory: string;
+    setSearchCategory: React.Dispatch<React.SetStateAction<string>>;
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Sidebar from "./Components/Sidebar/Sidebar";
 import HomepageWindow from "./Components/HomepageWindow/HomepageWindow";
@@ -8,16 +8,19 @@ import CategoriesTab from "./Components/CategoriesTab/CategoriesTab";
 import CategoriesTabA from "./Components/CategoriesTab/CategoriesTabA";
 
 function App() {
+
+    const [searchCategory, setSearchCategory] = useState("");
+
   return (
     <div className="app">
         <div className="mainPage">
             <Sidebar/>
             <div className="mainWindow">
-                <HomepageWindow/>
+                <HomepageWindow setSearchCategory={setSearchCategory}/>
                 <TrendingNowWindowS/>
             </div>
         </div>
-        {/*<CategoriesTabA/>*/}
+        <CategoriesTabA searchCategory={searchCategory} setSearchCategory={setSearchCategory}/>
     </div>
   );
 }

@@ -1,13 +1,12 @@
 import React, {useMemo, useState} from 'react';
 import {mockDataArray} from "../Utils/mockDataAttay";
-import {IMockData, SearchCategory} from "../../Interfaces/Interfaces";
+import {IMockData, ISearchCategory, SearchCategory} from "../../Interfaces/Interfaces";
 import TrendingNowCard from "../TrendingNowCard/TrendingNowCard";
 import CustomButton from "../UI/CustomButton";
 import {arrayOfAutocompleteData} from "../Utils/arrayOfAutocompleteData";
 
-const CategoriesTab = () => {
+const CategoriesTab = ({searchCategory, setSearchCategory}: ISearchCategory) => {
 
-    const [searchCategory, setSearchCategory] = useState("");
     const [searchRes, setSearchRes] = useState<IMockData[]>([]);
     const suggestions = useMemo(() => autoComplete(searchCategory), [searchCategory]);
 
@@ -27,7 +26,7 @@ const CategoriesTab = () => {
                        placeholder="Enter a category" />
                 <CustomButton onClick={() => searchResult(searchCategory)} label="Search"/>
                 <div>
-                    {suggestions.map((category) => <button>{category.value}</button> )}
+                    {suggestions.map((category) => <button onClick={() => setSearchCategory(category.value)}>{category.value}</button> )}
                 </div>
             </div>
             <div className="searchResults">

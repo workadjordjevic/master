@@ -1,6 +1,7 @@
 import React from 'react';
 import "./TrendingNowCard.css";
 import {IPropsTrendingNowCard} from "../../Interfaces/Interfaces";
+import {calcDiscount} from "../Utils/calcDiscount";
 
 const TrendingNowCard = (props:IPropsTrendingNowCard) => {
     return (
@@ -12,6 +13,11 @@ const TrendingNowCard = (props:IPropsTrendingNowCard) => {
             </div>
             <div className="gamePrice">
                 <button className="gamePriceButton"> ${props.price} </button>
+                {
+                    props.hasDiscount?
+                        <button>${calcDiscount(props.price, props.discountAmount)}</button> :
+                        <div></div>
+                }
             </div>
         </div>
     );

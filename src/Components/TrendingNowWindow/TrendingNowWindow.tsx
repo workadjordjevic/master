@@ -34,9 +34,12 @@ const TrendingNowWindow : FC = () => {
                 </div>
             </div>
             <div className="trendingCardList" ref={sliderRef}>
-                {mockDataArray.map(({image,title,description,price} ) =>
+                {mockDataArray.map(({image,title,description,price,hasDiscount,discountAmount} ) =>
                     <TrendingNowCard image={image} title={title}
-                                     description={description} price={price} key={title} />
+                                     description={description} price={price}
+                                     hasDiscount={hasDiscount}  key={title}
+                                     discountAmount={discountAmount}
+                    />
                 )}
             </div>
         </div>
