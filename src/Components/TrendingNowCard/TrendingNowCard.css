@@ -31,7 +31,9 @@
 }
 
 .gamePrice {
-
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .gamePriceButton {
@@ -48,4 +50,22 @@
 
 .cardGameDescription {
     font-size: 12px;
+}
+
+.wishlistButtonIcon{
+    width: 20px;
+    height: 20px;
+}
+
+.discountPriceButton{
+    display: flex;
+    gap: 10px;
+}
+
+.oldPrice{
+    text-decoration: line-through;
+}
+
+.discountAmount{
+    color: green;
 }

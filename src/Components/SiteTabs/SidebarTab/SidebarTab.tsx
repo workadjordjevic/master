@@ -7,24 +7,19 @@ import buysIcon from "../../../Images/Buys.png"
 import wishlistIcon from "../../../Images/Wishlist.png"
 import siteIcon from "../../../Images/SiteIcon.png"
 import userIcon from "../../../Images/User.png"
+import {Link} from "react-router-dom";
 
 
 const SidebarTab = () => {
-//     const siteTabs = [{tabName:"G:PLATFORM", icon:siteIcon},
-//                                              {tabName:"Home", icon:homeIcon},
-//                                              {tabName:"Category", icon:categoryIcon},
-//                                              {tabName:"Buys", icon:buysIcon},
-//                                              {tabName:"Wishlist", icon:wishlistIcon},];
+
     return (
         <div className="sidebar">
-            <div>
-                {/*{siteTabs.map((tab) =>*/}
-                {/*    <SidebarLink tabName={tab.tabName} icon={tab.icon} key={tab.tabName}/>)}*/}
-                <SidebarLink tabName="G:PLATFORM" icon={siteIcon} isDisabled={true}/>
-                <SidebarLink tabName="Home" icon={homeIcon}/>
-                <SidebarLink tabName="Category" icon={categoryIcon}/>
-                <SidebarLink tabName="Buys" icon={buysIcon}/>
-                <SidebarLink tabName="Wishlist" icon={wishlistIcon}/>
+            <div className="sidebarTabs">
+                <button disabled className={`siteName`}> <img className="siteIcon" src={siteIcon} alt="icon"/><div className="tabName">G:PLATFORM</div></button>
+                <Link key="Home" to="/"><SidebarLink tabName="Home" icon={homeIcon}/></Link>
+                <Link key="Categories" to="/categories"><SidebarLink tabName="Categories" icon={categoryIcon}/></Link>
+                <Link key="Buys" to="/cart"><SidebarLink tabName="Buys" icon={buysIcon}/></Link>
+                <Link key="Wishlist" to="/wishlist"><SidebarLink tabName="Wishlist" icon={wishlistIcon}/></Link>
             </div>
             <div className="currentUser">
                 <img src={userIcon} className="userIcon" alt="user icon" />

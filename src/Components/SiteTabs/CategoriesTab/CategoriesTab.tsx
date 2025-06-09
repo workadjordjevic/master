@@ -1,17 +1,22 @@
-import React, {useState} from 'react';
+import React, {useMemo, useState} from 'react';
 import {mockDataArray} from "../../Utils/mockDataAttay";
-import {IMockData} from "../../../Interfaces/Interfaces";
+import {IMockData, ISearchCategory, SearchCategory} from "../../../Interfaces/Interfaces";
 import TrendingNowCard from "../../TrendingNowCard/TrendingNowCard";
 import CustomButton from "../../UI/CustomButton";
+import {arrayOfAutocompleteData} from "../../Utils/arrayOfAutocompleteData";
 
-const CategoriesTab = () => {
+const CategoriesTab = ({searchCategory, setSearchCategory}: ISearchCategory) => {
 
-    const [searchCategory, setSearchCategory] = useState("");
-    let searchRes: IMockData[] = [];
-    // let searchCategory = "";
+    const [searchRes, setSearchRes] = useState<IMockData[]>([]);
+    const suggestions = useMemo(() => autoComplete(searchCategory), [searchCategory]);
 
-    function searchResult (request:string[]){
-        searchRes = mockDataArray.filter((game:IMockData) => game.category === request);
+    function autoComplete(input: string) {
+        return arrayOfAutocompleteData.filter(item => item.value.toLowerCase().includes(input.toLowerCase()));
+    }
+
+    function searchResult (request:string){
+        setSearchRes(mockDataArray.filter((game:IMockData) =>
+        !!game.category?.find((item) => item.toLowerCase().includes(request.toLowerCase()))));
     }
 
     return (
@@ -19,12 +24,14 @@ const CategoriesTab = () => {
             <div>
                 <input type="text" value={searchCategory} id="searchCategoryInput" onChange={(e) => setSearchCategory(e.target.value)}
                        placeholder="Enter a category" />
-                <CustomButton type="submit" label="Search" />
+                <CustomButton onClick={() => searchResult(searchCategory)} label="Search"/>
+                <div>
+                    {suggestions.map((category) => <button onClick={() => setSearchCategory(category.value)}>{category.value}</button> )}
+                </div>
             </div>
             <div className="searchResults">
                 {searchRes.length ?
-                    searchRes.map(game => <TrendingNowCard image={game.image} title={game.title}
-                                                           description={game.description} price={game.price} key={game.title} />)
+                    searchRes.map(game => <TrendingNowCard game={game} key={game.title} />)
                     :
                     <div>No matches</div>
                 }

@@ -2,18 +2,17 @@ import React from 'react';
 import Sidebar from "../SidebarTab/SidebarTab";
 import HomepageWindow from "./HomepageWindow/HomepageWindow";
 import "./HomepageTab.css";
-import {ISetSearchCategory} from "../../../Interfaces/Interfaces";
+import {IPropsHomepageTab} from "../../../Interfaces/Interfaces";
 import TrendingNowWindow from "../../TrendingNowWindow/TrendingNowWindow";
 
-const HomepageTab = ({setSearchCategory}:ISetSearchCategory) => {
-    return (
+const HomepageTab = ({setSearchCategory,setWishlist,setCart}:IPropsHomepageTab) => {
+    return ( //layout <>
 <div className="mainPage">
-    <Sidebar/>
     <div className="mainWindow">
         <HomepageWindow setSearchCategory={setSearchCategory}/>
-        <TrendingNowWindow/>
+        <TrendingNowWindow setWishlist={setWishlist} setCart={setCart}/>
     </div>
-</div>
+</div> //</>
     );
 };
 

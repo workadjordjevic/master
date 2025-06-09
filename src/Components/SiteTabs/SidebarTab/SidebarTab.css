@@ -27,6 +27,12 @@
     font-size: 14px;
 }
 
-.sidebar button:nth-child(1){
+.siteName{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: transparent;
+    width: 100%;
+    border-color: transparent;
     margin-bottom: 50px;
 }

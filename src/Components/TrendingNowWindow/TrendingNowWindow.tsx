@@ -2,10 +2,10 @@ import React, {FC,useRef} from 'react';
 import "./TrendingNowWindow.css";
 import {mockDataArray} from "../Utils/mockDataAttay";
 import TrendingNowCard from "../TrendingNowCard/TrendingNowCard";
+import {IMockData, IPropsTrendingNowCard, IPropsTrendingNowWindow} from "../../Interfaces/Interfaces";
 const SCROLLAMOUNT = 150;
 
-
-const TrendingNowWindow : FC = () => {
+const TrendingNowWindow = ({setCart,setWishlist}:IPropsTrendingNowWindow) => {
     const sliderRef= useRef<HTMLDivElement | null>(null);
 
     function scrollBackwards (){
@@ -22,6 +22,10 @@ const TrendingNowWindow : FC = () => {
         container.scrollLeft += SCROLLAMOUNT;
     }
 
+    function handleAddToCart(game:IMockData){
+        setCart( (prevState) => [...prevState, game]);
+    }
+
     return (
         <div className="trendingNowWindow">
             <div className="trendingNowHeader">
@@ -34,11 +38,9 @@ const TrendingNowWindow : FC = () => {
                 </div>
             </div>
             <div className="trendingCardList" ref={sliderRef}>
-                {mockDataArray.map(({image,title,description,price,hasDiscount,discountAmount} ) =>
-                    <TrendingNowCard image={image} title={title}
-                                     description={description} price={price}
-                                     hasDiscount={hasDiscount}  key={title}
-                                     discountAmount={discountAmount}
+                {mockDataArray.map((game) =>
+                    <TrendingNowCard game={game} key={game.title} onAddCart={handleAddToCart}
+                                     setCart={setCart} setWishlist={setWishlist}
                     />
                 )}
             </div>

@@ -1,9 +1,13 @@
 import React from 'react';
+import "./Wishlist.css";
+import {IPropsWishlist} from "../../../Interfaces/Interfaces";
+import TrendingNowCard from "../../TrendingNowCard/TrendingNowCard";
 
-const Wishlist = () => {
+const Wishlist = ({wishlist, setWishlist}:IPropsWishlist) => {
     return (
-        <div>
-            Wishlist
+        <div className="wishlistWindow">
+            {wishlist.map((game) => <TrendingNowCard game={game} key={game.title}
+            />)}
         </div>
     );
 };

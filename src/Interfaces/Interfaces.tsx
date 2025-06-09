@@ -17,14 +17,16 @@ export type SearchCategory =
     | "Survival"
     | "Walking Simulator";
 
+export interface IPropsTrendingNowWindow {
+    setCart: React.Dispatch<React.SetStateAction<IMockData[]>>;
+    setWishlist: React.Dispatch<React.SetStateAction<IMockData[]>>;
+}
+
 export interface IPropsTrendingNowCard {
-    image: string;
-    title: string;
-    description: string;
-    price: number;
-    hasDiscount?: boolean;
-    discountAmount?:number;
-    discountedPrice?: number;
+    game: IMockData;
+    setCart?: React.Dispatch<React.SetStateAction<IMockData[]>>;
+    setWishlist?: React.Dispatch<React.SetStateAction<IMockData[]>>;
+    onAddCart?: (game: IMockData)=> void;
 }
 
 export interface ISidebarTab {
@@ -46,8 +48,8 @@ export interface IMockData {
 export interface ICustomButton{
     type?: string;
     label: string;
-    // onClick?: (e:React.MouseEvent<HTMLButtonElement>)=> void;
-    onClick?: any;
+    onClick?: (e:React.MouseEvent<HTMLButtonElement>)=> void;
+    // onClick?: any;
 }
 
 export interface AutoCompleteItem {
@@ -66,4 +68,38 @@ export interface ISetSearchCategory {
 export interface ISearchCategory {
     searchCategory: string;
     setSearchCategory: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export interface IPropsWishlist {
+    wishlist: IMockData[];
+    addToCartButton?: any;
+    removeFromWishlistButton?: any;
+    setWishlist: React.Dispatch<React.SetStateAction<IMockData[]>>;
+}
+
+export interface IPropsHomepageTab {
+    setSearchCategory: React.Dispatch<React.SetStateAction<string>>;
+    setCart: React.Dispatch<React.SetStateAction<IMockData[]>>;
+    setWishlist: React.Dispatch<React.SetStateAction<IMockData[]>>;
+}
+
+export interface IPropsTrendingNowCardTest {
+    game:[
+        image: string,
+        title: string,
+        description: string,
+        price: number,
+        hasDiscount?: boolean,
+        discountAmount?:number,
+        discountedPrice?: number,
+        setCart?: React.Dispatch<React.SetStateAction<Array<IMockData>>>,
+        setWishlist?: React.Dispatch<React.SetStateAction<Array<IMockData>>>,
+    ]
+}
+
+export interface IPropsCart {
+    cart: IMockData[];
+    addToCartButton?: any;
+    removeFromWishlistButton?: any;
+    setCart: React.Dispatch<React.SetStateAction<IMockData[]>>;
 }
