@@ -1,0 +1,14 @@
+.sidebarTab{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: transparent;
+    width: 100%;
+    border-color: gray;
+}
+
+.tabName{
+    font-size: 20px;
+    margin-left: 20px;
+    color: white;
+}

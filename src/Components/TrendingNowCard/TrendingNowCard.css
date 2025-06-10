@@ -1,0 +1,71 @@
+.trendingNowCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 220px;
+    gap: 12px;
+}
+
+.trendingNowCard .gamePrice{
+    align-items: flex-end;
+}
+
+.gameDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 5px
+}
+
+.gameCoverArt {
+    width: 220px;
+    height: 220px;
+}
+
+.gameTitle {
+    color: white;
+}
+
+.cardGameDescription {
+   color: white;
+}
+
+.gamePrice {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.gamePriceButton {
+    background-color: gray;
+    border-color: transparent;
+    color: white;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.gamePriceButton:hover {
+    background-color: #3399ff;
+}
+
+.cardGameDescription {
+    font-size: 12px;
+}
+
+.wishlistButtonIcon{
+    width: 20px;
+    height: 20px;
+}
+
+.discountPriceButton{
+    display: flex;
+    gap: 10px;
+}
+
+.oldPrice{
+    text-decoration: line-through;
+}
+
+.discountAmount{
+    color: green;
+}

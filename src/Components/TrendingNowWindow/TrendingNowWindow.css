@@ -1,0 +1,34 @@
+.trendingNowWindow{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.trendingNowHeader{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px 0;
+    flex-direction: row;
+}
+
+.trendingNowArrowButtons{
+    display: flex;
+    gap: 5px;
+}
+
+.trendingCardList{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    padding: 0 20px 0;
+    max-width: 920px;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    transition: scroll 0.3s ease-in-out;
+}
+
+.trendingNowHeaderText{
+    color: white;
+    font-size: 18px;
+}
+

@@ -1,0 +1,7 @@
+.app{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+    background-color: grey;
+}

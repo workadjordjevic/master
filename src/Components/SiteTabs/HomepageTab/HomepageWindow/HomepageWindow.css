@@ -1,0 +1,66 @@
+.homepageWindow {
+    width: 960px;
+    /*min-height: 100vh;*/
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.homepageImage {
+    width: 960px;
+    height: 540px;
+}
+
+.addTo {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 30px;
+    right: 50px;
+    gap: 10px;
+    z-index: 1;
+}
+
+.addToCart {
+    padding: 10px;
+    background-color: #3399ff;
+    border-color: transparent;
+    border-radius: 8px;
+}
+
+.addToCart:active {
+    background-color: blue;
+}
+
+.addToBasketText {
+    margin: 0;
+    color:white;
+    font-size: 16px;
+}
+
+.addToFavorites {
+    border: 0;
+    background-color: transparent;
+}
+
+.favButton {
+    width: 40px;
+    height: 40px;
+}
+
+.gameDescription {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    width: 30%;
+    color: white;
+}
+
+.shadow {
+    position: absolute;
+    bottom:0;
+    left:0;
+    height: 100px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .2);
+}
